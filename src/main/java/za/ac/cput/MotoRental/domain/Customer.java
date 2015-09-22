@@ -17,8 +17,6 @@ public class Customer implements Person, Serializable {
     private String phoneNumber;
     @Embedded
     private AddressEmbeddable addressEmbeddable;
-    @Embedded
-    private LoginEmbeddable loginEmbeddable;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id")
     private List<Rental> rentals;
@@ -36,7 +34,6 @@ public class Customer implements Person, Serializable {
         this.lastName = builder.lastName;
         this.phoneNumber = builder.phoneNumber;
         this.addressEmbeddable = builder.addressEmbeddable;
-     //   this.loginEmbeddable = builder.loginEmbeddable;
         this.rentals = builder.rentals;
     }
 
@@ -63,10 +60,6 @@ public class Customer implements Person, Serializable {
         return addressEmbeddable;
     }
 
-    /*public LoginEmbeddable getLoginEmbeddable() {
-        return loginEmbeddable;
-    }*/
-
     public List<Rental> getRentals() {
         return rentals;
     }
@@ -79,7 +72,6 @@ public class Customer implements Person, Serializable {
         private String lastName;
         private String phoneNumber;
         private AddressEmbeddable addressEmbeddable;
-      //  private LoginEmbeddable loginEmbeddable;
         private List<Rental> rentals;
 
         public Builder(String lastName) {
@@ -101,11 +93,6 @@ public class Customer implements Person, Serializable {
             return this;
         }
 
-   /*     public Builder loginEmbeddable(LoginEmbeddable loginEmbeddable) {
-            this.loginEmbeddable = loginEmbeddable;
-            return this;
-        }*/
-
         public Builder rentals(List<Rental> rentals) {
             this.rentals = rentals;
             return this;
@@ -124,7 +111,6 @@ public class Customer implements Person, Serializable {
             this.lastName = customer.lastName;
             this.phoneNumber = customer.phoneNumber;
             this.addressEmbeddable = customer.addressEmbeddable;
-         //   this.loginEmbeddable = customer.loginEmbeddable;
             this.rentals = customer.rentals;
             return this;
         }

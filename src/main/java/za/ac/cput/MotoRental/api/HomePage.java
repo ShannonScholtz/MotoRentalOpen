@@ -27,7 +27,7 @@ public class HomePage {
         return "This is a Home Page";
     }
 
-    @RequestMapping(value = "/motorcyle",method = RequestMethod.GET)
+    @RequestMapping(value = "/motorcycle",method = RequestMethod.GET)
     public MotorCycle getMotorCycle(){
 
         List<PaymentMethod> paymentMethods = new ArrayList();

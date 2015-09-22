@@ -2,7 +2,6 @@ package za.ac.cput.MotoRental.module;
 
 import org.springframework.hateoas.ResourceSupport;
 import za.ac.cput.MotoRental.domain.AddressEmbeddable;
-import za.ac.cput.MotoRental.domain.LoginEmbeddable;
 import za.ac.cput.MotoRental.domain.Person;
 import za.ac.cput.MotoRental.domain.Rental;
 

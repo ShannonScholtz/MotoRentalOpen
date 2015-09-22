@@ -18,7 +18,6 @@ public class CustomerFactory {
                 .firstName(firstName)
                 .phoneNumber(phoneNumber)
                 .addressEmbeddable(AddressEmbeddableFactory.createAddress(Address, City, postalCode))
-                //.loginEmbeddable(LoginEmbeddableFactory.createLogin(username, password))
                 .rentals(rentals)
                 .build();
         return customer;
