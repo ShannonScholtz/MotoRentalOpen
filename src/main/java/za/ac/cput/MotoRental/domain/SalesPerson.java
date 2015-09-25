@@ -149,8 +149,14 @@ public class SalesPerson implements Person, Serializable {
     }
 
     @Override
-    public String toString()
-    {
-        return "Name: " + firstName + "" + "Surname: " + lastName;
+    public String toString() {
+        return "SalesPerson{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", hours=" + hours +
+                ", rate=" + rate +
+                ", customers=" + customers +
+                '}';
     }
 }

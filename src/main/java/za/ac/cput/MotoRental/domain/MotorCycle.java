@@ -152,6 +152,15 @@ public class MotorCycle implements Serializable {
 
     @Override
     public String toString() {
-        return "Make: " + Make;
+        return "MotorCycle{" +
+                "id=" + id +
+                ", SerialNumber='" + SerialNumber + '\'' +
+                ", Make='" + Make + '\'' +
+                ", Model='" + Model + '\'' +
+                ", year='" + year + '\'' +
+                ", motorBikeConditionEmbeddable=" + motorBikeConditionEmbeddable +
+                ", engineTypeEmbeddable=" + engineTypeEmbeddable +
+                ", rentals=" + rentals +
+                '}';
     }
 }

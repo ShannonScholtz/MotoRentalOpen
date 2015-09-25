@@ -4,10 +4,6 @@ import org.springframework.hateoas.ResourceSupport;
 import za.ac.cput.MotoRental.domain.Customer;
 import za.ac.cput.MotoRental.domain.Person;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import java.util.List;
 
 /**
@@ -20,8 +16,6 @@ public class SalespersonResource extends ResourceSupport implements Person {
     private String lastName;
     private int hours;
     private double rate;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name="salesperson_id")
     private List<Customer> customers;
 
     //constructors
@@ -132,5 +126,17 @@ public class SalespersonResource extends ResourceSupport implements Person {
         {
             return new SalespersonResource(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "SalespersonResource{" +
+                "resid=" + resid +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", hours=" + hours +
+                ", rate=" + rate +
+                ", customers=" + customers +
+                '}';
     }
 }

@@ -5,7 +5,6 @@ import za.ac.cput.MotoRental.domain.AddressEmbeddable;
 import za.ac.cput.MotoRental.domain.Person;
 import za.ac.cput.MotoRental.domain.Rental;
 
-import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -17,12 +16,7 @@ public class CustomerResource extends ResourceSupport implements Person {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-    @Embedded
     private AddressEmbeddable addressEmbeddable;
-    @Embedded
-   // private LoginEmbeddable loginEmbeddable;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "customer_id")
     private List<Rental> rentals;
 
     //constructors
@@ -38,7 +32,6 @@ public class CustomerResource extends ResourceSupport implements Person {
         this.lastName = builder.lastName;
         this.phoneNumber = builder.phoneNumber;
         this.addressEmbeddable = builder.addressEmbeddable;
-   //     this.loginEmbeddable = builder.loginEmbeddable;
         this.rentals = builder.rentals;
     }
 
@@ -67,9 +60,6 @@ public class CustomerResource extends ResourceSupport implements Person {
         return addressEmbeddable;
     }
 
-  /*  public LoginEmbeddable getLoginEmbeddable() {
-        return loginEmbeddable;
-    }*/
 
     public List<Rental> getRentals() {
         return rentals;
@@ -83,7 +73,6 @@ public class CustomerResource extends ResourceSupport implements Person {
         private String lastName;
         private String phoneNumber;
         private AddressEmbeddable addressEmbeddable;
-    //    private LoginEmbeddable loginEmbeddable;
         private List<Rental> rentals;
 
         public Builder(String lastName) {
@@ -105,11 +94,6 @@ public class CustomerResource extends ResourceSupport implements Person {
             return this;
         }
 
-       /* public Builder loginEmbeddable(LoginEmbeddable loginEmbeddable) {
-            this.loginEmbeddable = loginEmbeddable;
-            return this;
-        }*/
-
         public Builder rentals(List<Rental> rentals) {
             this.rentals = rentals;
             return this;
@@ -128,7 +112,6 @@ public class CustomerResource extends ResourceSupport implements Person {
             this.lastName = customer.lastName;
             this.phoneNumber = customer.phoneNumber;
             this.addressEmbeddable = customer.addressEmbeddable;
-           // this.loginEmbeddable = customer.loginEmbeddable;
             this.rentals = customer.rentals;
             return this;
         }
@@ -137,5 +120,17 @@ public class CustomerResource extends ResourceSupport implements Person {
         {
             return new CustomerResource(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerResource{" +
+                "resid=" + resid +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", addressEmbeddable=" + addressEmbeddable +
+                ", rentals=" + rentals +
+                '}';
     }
 }

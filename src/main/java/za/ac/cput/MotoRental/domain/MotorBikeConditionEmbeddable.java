@@ -75,4 +75,5 @@ public class MotorBikeConditionEmbeddable implements Serializable {
             return new MotorBikeConditionEmbeddable(this);
         }
     }
+
 }

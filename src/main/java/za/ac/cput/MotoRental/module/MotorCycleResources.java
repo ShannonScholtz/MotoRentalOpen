@@ -76,7 +76,6 @@ public class MotorCycleResources extends ResourceSupport {
         private String Model;
         private String year;
         private MotorBikeConditionEmbeddable motorBikeConditionEmbeddable;
-        // private MotorCycleStatusEmbeddable motorCycleStatusEmbeddable;
         private EngineTypeEmbeddable engineTypeEmbeddable;
         private List<Rental> rentals;
 
@@ -129,6 +128,20 @@ public class MotorCycleResources extends ResourceSupport {
         public MotorCycleResources build() {
             return new MotorCycleResources(this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "MotorCycleResources{" +
+                "resid=" + resid +
+                ", SerialNumber='" + SerialNumber + '\'' +
+                ", Make='" + Make + '\'' +
+                ", Model='" + Model + '\'' +
+                ", year='" + year + '\'' +
+                ", motorBikeConditionEmbeddable=" + motorBikeConditionEmbeddable +
+                ", engineTypeEmbeddable=" + engineTypeEmbeddable +
+                ", rentals=" + rentals +
+                '}';
     }
 }
 

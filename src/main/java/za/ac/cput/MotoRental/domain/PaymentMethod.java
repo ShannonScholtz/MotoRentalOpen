@@ -1,8 +1,10 @@
 package za.ac.cput.MotoRental.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by student on 2015/08/12.
@@ -90,6 +92,10 @@ public class PaymentMethod implements Serializable {
 
     @Override
     public String toString() {
-        return "Payment Type: " + PaymentType + "" + "Price: " + Price;
+        return "PaymentMethod{" +
+                "id=" + id +
+                ", PaymentType='" + PaymentType + '\'' +
+                ", Price=" + Price +
+                '}';
     }
 }

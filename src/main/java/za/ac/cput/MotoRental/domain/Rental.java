@@ -105,8 +105,12 @@ public class Rental implements Serializable {
     }
 
     @Override
-    public String toString()
-    {
-        return "Pick Up Date: " + pickUpDate + "" + "Return Date: " + returnDate;
+    public String toString() {
+        return "Rental{" +
+                "id=" + id +
+                ", pickUpDate='" + pickUpDate + '\'' +
+                ", returnDate='" + returnDate + '\'' +
+                ", paymentMethod=" + paymentMethod +
+                '}';
     }
 }

@@ -140,8 +140,14 @@ public class Customer implements Person, Serializable {
     }
 
     @Override
-    public String toString()
-    {
-        return "Name: " + firstName + "" + "Surname: " + lastName;
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", addressEmbeddable=" + addressEmbeddable +
+                ", rentals=" + rentals +
+                '}';
     }
 }
